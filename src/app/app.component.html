@@ -1,0 +1,73 @@
+<div class="container">
+
+  <div class="card mt-5" style="max-width: 40rem; margin: 0 auto">
+ 
+   <div class="card-body">
+ 
+    <h4 class="card-title text-center text-primary mt-2">Password Generator</h4>
+ 
+    <div class="form mt-4" style="max-width: 30rem; margin: 0 auto">
+ 
+     <div class="form-floating mb-3">
+ 
+      <input (input)="onUserInput($event)"
+ 
+       type="email"
+ 
+       class="form-control"
+ 
+       id="floatingInput"
+ 
+       placeholder="Enter length"
+ 
+      />
+ 
+      <label for="floatingInput">Enter Length</label>
+ 
+     </div>
+ 
+     <div class="form-check mb-1">
+ 
+      <input class="form-check-input" type="checkbox" (change)="onChangeIncludeLetters()">
+ 
+      <label class="form-check-label">Use Letters</label>
+ 
+     </div>
+ 
+     <div class="form-check mb-1">
+ 
+      <input class="form-check-input" type="checkbox" (change)="onChangeIncludeNumbers()">
+ 
+      <label class="form-check-label">Use Numbers</label>
+ 
+     </div>
+ 
+     <div class="form-check mb-3">
+ 
+      <input class="form-check-input" type="checkbox" (change)="onChangeIncludeSymble()">
+ 
+      <label class="form-check-label">Use Symbols</label>
+ 
+     </div>
+ 
+     <div class="mb-4">
+ 
+      <button [disabled]="!(length&&(includeLetters || includeNumbers || includeSymble))" type="button" class="btn btn-primary" style="width: 30rem;" (click)="genPass()">Generate!</button>
+ 
+     </div>
+ 
+     <div class="form-floating my-4" *ngIf="password">
+ 
+      <textarea class="form-control" placeholder="Your password" id="floatingTextarea" [value]="password"></textarea>
+ 
+      <label for="floatingTextarea">Your password is : {{password}} </label>
+ 
+     </div>
+ 
+    </div>
+ 
+   </div>
+ 
+  </div>
+ 
+ </div>
